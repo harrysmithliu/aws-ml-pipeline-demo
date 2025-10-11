@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Notebooks cache
+.ipynb_checkpoints/
+
+# Local logs / artifacts
+*.log
+*.tmp
+.env
+
+# Model artifacts (由云端产出，不需要版本管控)
+model.tar.gz
+*.joblib
+
+# OS
+.DS_Store
+Thumbs.db
+
