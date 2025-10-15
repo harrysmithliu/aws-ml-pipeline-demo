@@ -73,16 +73,6 @@ Local FastAPI client ──► invoke endpoint ──► CloudWatch (logs/metric
    ```
 3. Check **CloudWatch Logs** (SageMaker → Inference → Endpoints → Logs).
 
-### Example Output
-
-Prediction result:
-
-| Living Area (sqft) | Bedrooms | Predicted Price (USD) |
-| -----------------: | -------: | --------------------: |
-|               1200 |        3 |               322,957 |
-|               1500 |        4 |               390,672 |
-
-
 ### Day 6 – Clean up (to keep it \$0)
 - Run `python src/teardown.py --endpoint <your-endpoint> --model <your-model-name>`  
 - Or delete endpoint/model from the SageMaker console.
@@ -150,15 +140,15 @@ Ideal for students and early-career developers exploring cloud ML deployment.
 - CloudWatch monitoring
 - Modular design for XGBoost / RandomForest / LinearRegression
 
-## Sample Prediction Output
+### Prediction Output
 | Living Area (sqft) | Bedrooms | Predicted Price (USD) |
-|--------------------:|----------:|----------------------:|
-| 1200 | 3 | 322,957 |
-| 1500 | 4 | 390,672 |
+| -----------------: | -------: | --------------------: |
+|               1200 |        3 |               322,957 |
+|               1500 |        4 |               390,672 |
+
 
 Model trained and deployed using AWS SageMaker Scikit-Learn.  
 Predictions generated offline via Jupyter Notebook and stored in S3.
-
 
 **Author**: Harry Liu
 **Use at your own risk. Remember to tear down cloud resources.**
