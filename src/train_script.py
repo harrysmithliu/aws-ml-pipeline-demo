@@ -6,6 +6,7 @@
 # - implements model_fn, input_fn, predict_fn, output_fn
 # -----------------------------------------------------------------------------
 
+from io import StringIO
 import argparse, json, os, sys, joblib, logging
 from typing import List
 import numpy as np, pandas as pd
@@ -21,7 +22,6 @@ logger = logging.getLogger(__name__)
 
 def _read_csv_auto(path: str, sep: str = ",", header: str = "infer") -> pd.DataFrame:
     header_arg = "infer" if header == "infer" else None
-    return pd.read_csv(path, sep=sep, header=header_arg)
 
 def _split_features_target(df: pd.DataFrame, target_col: str = None):
     if target_col and target_col in df.columns:
@@ -95,7 +95,8 @@ def model_fn(model_dir: str):
 
 def input_fn(request_body: str, content_type: str):
     if content_type == "text/csv":
-        data = pd.read_csv(pd.compat.StringIO(request_body), header=None)
+        # data = pd.read_csv(pd.compat.StringIO(request_body), header=None)
+        data = pd.read_csv(StringIO(request_body), header=None)
         return data
     if content_type.startswith("application/json"):
         body = json.loads(request_body)
