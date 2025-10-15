@@ -146,5 +146,15 @@ Ideal for students and early-career developers exploring cloud ML deployment.
 - CloudWatch monitoring
 - Modular design for XGBoost / RandomForest / LinearRegression
 
-**Author**: Harry (Laurentian University MSc)  
+## Sample Prediction Output
+| Living Area (sqft) | Bedrooms | Predicted Price (USD) |
+|--------------------:|----------:|----------------------:|
+| 1200 | 3 | 322,957 |
+| 1500 | 4 | 390,672 |
+
+Model trained and deployed using AWS SageMaker Scikit-Learn.  
+Predictions generated offline via Jupyter Notebook and stored in S3.
+
+
+**Author**: Harry Liu
 **Use at your own risk. Remember to tear down cloud resources.**
