@@ -75,9 +75,13 @@ Local FastAPI client ──► invoke endpoint ──► CloudWatch (logs/metric
 
 ### Example Output
 
-Prediction result: [245000.8]
+Prediction result:
 
-![Training job completed](results/training_completed.png)
+| Living Area (sqft) | Bedrooms | Predicted Price (USD) |
+| -----------------: | -------: | --------------------: |
+|               1200 |        3 |               322,957 |
+|               1500 |        4 |               390,672 |
+
 
 ### Day 6 – Clean up (to keep it \$0)
 - Run `python src/teardown.py --endpoint <your-endpoint> --model <your-model-name>`  
